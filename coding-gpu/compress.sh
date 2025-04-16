@@ -17,4 +17,3 @@ if [ "$mode" = com ] ; then
 elif [ "$mode" = bs ] ; then
 	python compress_bootstrap.py --file_name $BASE --output $OUTPUT  --model_weights_path $MODEL_PATH
 fi
-

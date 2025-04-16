@@ -76,9 +76,14 @@ class ArithmeticCoderBase(object):
 #			raise AssertionError("Range out of range")
 			
 		# Frequency table values check
-		total = np.asscalar(cumul[-1])
-		symlow = np.asscalar(cumul[symbol])
-		symhigh = np.asscalar(cumul[symbol+1])
+		total = cumul[-1].item()
+		symlow = cumul[symbol].item()
+		symhigh = cumul[symbol + 1].item()
+		# total = np.asscalar(cumul[-1])
+		# symlow = np.asscalar(cumul[symbol])
+		# symhigh = np.asscalar(cumul[symbol+1])
+		
+
 #		if symlow == symhigh:
 #			raise ValueError("Symbol has zero frequency")
 #		if total > self.MAX_TOTAL:
@@ -177,7 +182,8 @@ class ArithmeticDecoder(ArithmeticCoderBase):
 #			freqs = CheckedFrequencyTable(freqs)
 		
 		# Translate from coding range scale to frequency table scale
-		total = np.asscalar(cumul[-1])
+		# total = np.asscalar(cumul[-1])
+		total = cumul[-1].item()
 #		if total > self.MAX_TOTAL:
 #			raise ValueError("Cannot decode symbol because total is too large")
 		range = self.high - self.low + 1
